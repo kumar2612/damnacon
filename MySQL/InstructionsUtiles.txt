@@ -1,0 +1,38 @@
+mysqladmin -u USERNAME password PASSWORD
+mysqladmin -u root password root
+
+
+mysql -h localhost -u USERNAME -pPASSWORD
+mysql -h localhost -u ndd -pndd
+
+
+CREATE DATABASE DATABASE_NAME DEFAULT CHARACTER SET ENCODAGE COLLATE utf8_general_ci;
+CREATE DATABASE bdd_hotel_system DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+CREATE USER 'USERNAME'@'localhost' IDENTIFIED BY 'PASSWORD';
+GRANT ALL ON DATABASE_NAME.* TO 'USERNAME'@'localhost' IDENTIFIED BY 'PASSWORD';
+CREATE USER 'ndd'@'localhost' IDENTIFIED BY 'ndd';
+GRANT ALL ON bdd_hotel_system.* TO 'ndd'@'localhost' IDENTIFIED BY 'ndd';
+
+USE DATABASE_NAME;
+use bdd_sdzee;
+
+GRANT ALL PRIVILEGES ON elevage.* TO 'sdz'@'localhost' IDENTIFIED BY 'ndd';
+
+mysqldump -u user -p --opt nom_de_la_base > sauvegarde.sql
+
+CREATE TABLE Utilisateur (
+ id INT( 11 ) NOT NULL AUTO_INCREMENT ,
+ id_utilisateur INT( 11 ) ,
+ email VARCHAR( 20 ) NOT NULL ,
+ motDePasse VARCHAR( 20 ) ,
+ nom VARCHAR( 20 ) NOT NULL ,
+ dateSubscription DATETIME NOT NULL ,
+ PRIMARY KEY ( id ) ,
+ CONSTRAINT fk_id_utilisateur      
+    FOREIGN KEY (id_utilisateur)   
+    REFERENCES Utilisateur(id)     
+    ON DELETE SET NULL        
+) ENGINE = INNODB;
+
