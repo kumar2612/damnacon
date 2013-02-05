@@ -1,0 +1,25 @@
+<mockup version="1.0" skin="sketch" measuredW="1018" measuredH="447" mockupW="562" mockupH="423">
+  <controls>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Canvas" x="456" y="53" w="562" h="394" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::MenuBar" x="457" y="54" w="-1" h="-1" measuredW="246" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>Home%26bm%3BHome.bmml%26bm%3BHome.bmml%26bm%3BHome.bmml%2CSubscription%26bm%3BSubscription.bmml%26bm%3BSubscription.bmml%26bm%3BSubscription.bmml%2CConnexion%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2219%2C36%2C66%2C57%22%20href%3D%22Home.bmml%22%20alt%3D%22Home%22%20id%3D%2225_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2275%2C36%2C157%2C57%22%20href%3D%22Subscription.bmml%22%20alt%3D%22Subscription%22%20id%3D%2225_1%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%22166%2C36%2C238%2C57%22%20href%3D%22Connexion.bmml%22%20alt%3D%22Connexion%22%20id%3D%2225_2%22/%3E%0A</map>
+        <selectedIndex>0</selectedIndex>
+        <text>Home%2C%20Subscription%2C%20Connexion</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::TextArea" x="456" y="79" w="562" h="368" measuredW="200" measuredH="140" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20%0A%20%0ABienvenue%20sur%20votre%20site%20de%20reservation%20en%20ligne%20de%20logement.%0A%20%0ANos%20engagements%20%3A%0A-%20Pas%20de%20frais%20en%20avance%0A-%20Un%20accueil%20%E0%20l%27aeroport</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::TextArea" x="457" y="24" w="561" h="34" measuredW="200" measuredH="140" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>true</italic>
+        <size>24</size>
+        <text>@Hosting</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

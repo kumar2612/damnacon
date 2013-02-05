@@ -1,0 +1,60 @@
+<mockup version="1.0" skin="sketch" measuredW="1019" measuredH="414" mockupW="640" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="379" y="44" w="640" h="370" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::MenuBar" x="379" y="44" w="-1" h="-1" measuredW="206" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>Profil%26bm%3BProfil.bmml%26bm%3BProfil.bmml%26bm%3BProfil.bmml%2CBooking%26bm%3BBooking.bmml%26bm%3BBooking.bmml%26bm%3BBooking.bmml%2CHistory%26bm%3BHistory.bmml%26bm%3BHistory.bmml%26bm%3BHistory.bmml%2C%2C</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2218%2C36%2C68%2C57%22%20href%3D%22Profil.bmml%22%20alt%3D%22Profil%22%20id%3D%2212_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2277%2C36%2C135%2C57%22%20href%3D%22Booking.bmml%22%20alt%3D%22Booking%22%20id%3D%2212_1%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%22144%2C36%2C197%2C57%22%20href%3D%22History.bmml%22%20alt%3D%22History%22%20id%3D%2212_2%22/%3E%0A</map>
+        <selectedIndex>1</selectedIndex>
+        <text>Profile%2C%20Booking%2C%20History</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="396" y="88" w="293" h="21" measuredW="198" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>To%20book%2C%20fill%20up%20the%20following%20fields%20%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="396" y="110" w="119" h="23" measuredW="106" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Number%20of%20rooms</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Canvas" x="511" y="109" w="45" h="24" measuredW="100" measuredH="70" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Label" x="570" y="110" w="77" h="23" measuredW="64" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20date</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Canvas" x="639" y="109" w="147" h="24" measuredW="100" measuredH="70" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Label" x="793" y="110" w="77" h="23" measuredW="58" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>End%20date</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Canvas" x="862" y="109" w="140" h="24" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Button" x="722" y="148" w="64" h="29" measuredW="53" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Book</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Button" x="639" y="148" w="64" h="29" measuredW="53" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>clear</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="925" y="45" w="-1" h="-1" measuredW="94" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Connexion%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22546%2C31%2C640%2C58%22%20href%3D%22Connexion.bmml%22%20alt%3D%22Connexion%22%20id%3D%2231%22/%3E</map>
+        <text>d%E9connexion</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::TextArea" x="379" y="14" w="640" h="34" measuredW="200" measuredH="140" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>true</italic>
+        <size>24</size>
+        <text>@Hosting</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

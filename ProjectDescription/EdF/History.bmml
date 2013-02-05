@@ -1,0 +1,44 @@
+<mockup version="1.0" skin="sketch" measuredW="1019" measuredH="414" mockupW="640" mockupH="400">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="379" y="44" w="640" h="370" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="398" y="88" w="293" h="21" measuredW="246" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20history%20of%20bookings%20are%20the%20followings%20%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::MenuBar" x="379" y="44" w="-1" h="-1" measuredW="206" measuredH="29" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hrefs>Profil%26bm%3BProfil.bmml%26bm%3BProfil.bmml%26bm%3BProfil.bmml%2CBooking%26bm%3BBooking.bmml%26bm%3BBooking.bmml%26bm%3BBooking.bmml%2CHistory%26bm%3BHistory.bmml%26bm%3BHistory.bmml%26bm%3BHistory.bmml%2C%2C</hrefs>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2218%2C36%2C68%2C57%22%20href%3D%22Profil.bmml%22%20alt%3D%22Profil%22%20id%3D%222_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2277%2C36%2C135%2C57%22%20href%3D%22Booking.bmml%22%20alt%3D%22Booking%22%20id%3D%222_1%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%22144%2C36%2C197%2C57%22%20href%3D%22History.bmml%22%20alt%3D%22History%22%20id%3D%222_2%22/%3E%0A</map>
+        <selectedIndex>2</selectedIndex>
+        <text>Profile%2C%20Booking%2C%20History</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::DataGrid" x="439" y="131" w="453" h="203" measuredW="428" measuredH="145" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Booking%20number%20%5E%2C%20Number%20of%20room%28s%29%20%5Ev%2C%20Start%20date%20%5Ev%2C%20End%20date%20%5Ev%0A20110513121111%2C%201%2C%202012/05/17%2C%202012/05/23%0A20110513121212%2C%202%2C%202012/05/17%2C%202012/05/23%0A20110513121313%2C%203%2C%202011/05/17%2C%202011/05/23%0A20110513121414%2C%204%2C%202011/05/17%2C%202011/05/23%0A%7B65L%2C%200R%2C%2035%2C%200C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="925" y="45" w="-1" h="-1" measuredW="94" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Connexion%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml%26bm%3BConnexion.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22546%2C31%2C640%2C58%22%20href%3D%22Connexion.bmml%22%20alt%3D%22Connexion%22%20id%3D%224%22/%3E</map>
+        <text>d%E9connexion</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Link" x="648" y="349" w="-1" h="-1" measuredW="42" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>Profil%26bm%3BProfil.bmml%26bm%3BProfil.bmml%26bm%3BProfil.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22269%2C335%2C311%2C356%22%20href%3D%22Profil.bmml%22%20alt%3D%22Profil%22%20id%3D%226%22/%3E</map>
+        <text>Profile</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextArea" x="379" y="14" w="640" h="34" measuredW="200" measuredH="140" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <italic>true</italic>
+        <size>24</size>
+        <text>@Hosting</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
