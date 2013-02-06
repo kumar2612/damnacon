@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Class-Path: lombok-0.11.6.jar spring-tx-3.1.2.RELEASE.jar aopalliance-
- 1.0.jar spring-aop-3.1.2.RELEASE.jar spring-asm-3.1.2.RELEASE.jar spr
- ing-beans-3.1.2.RELEASE.jar spring-core-3.1.2.RELEASE.jar commons-log
- ging-1.1.1.jar spring-context-3.1.2.RELEASE.jar spring-expression-3.1
- .2.RELEASE.jar spring-orm-3.1.2.RELEASE.jar spring-jdbc-3.1.2.RELEASE
- .jar slf4j-api-1.7.2.jar jcl-over-slf4j-1.7.2.jar logback-classic-1.0
- .9.jar logback-core-1.0.9.jar
+Class-Path: lombok-0.11.6.jar mysql-connector-java-5.1.16.jar spring-t
+ x-3.1.2.RELEASE.jar aopalliance-1.0.jar spring-aop-3.1.2.RELEASE.jar 
+ spring-asm-3.1.2.RELEASE.jar spring-beans-3.1.2.RELEASE.jar spring-co
+ re-3.1.2.RELEASE.jar commons-logging-1.1.1.jar spring-context-3.1.2.R
+ ELEASE.jar spring-expression-3.1.2.RELEASE.jar spring-orm-3.1.2.RELEA
+ SE.jar spring-jdbc-3.1.2.RELEASE.jar slf4j-api-1.7.2.jar jcl-over-slf
+ 4j-1.7.2.jar logback-classic-1.0.9.jar logback-core-1.0.9.jar
 

@@ -149,6 +149,11 @@
 		</plugins>
 	</reporting>
 
+	<!-- Default dependency information for projects that inherit from this 
+		one. The dependencies in this section are not immediately resolved. Instead, 
+		when a POM derived from this one declares a dependency described by a matching 
+		groupId and artifactId, the version and other values from this section are 
+		used for that dependency if they were not already specified. -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

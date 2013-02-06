@@ -5,12 +5,48 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(of="id")	//Make the comparison on the id attribut only and not on all the attributs
 @XmlRootElement
-@EqualsAndHashCode
 public class Customer {
-	private int id;
+
+	public static final Customer EMPTY = new Customer();
+	
+	private int customerId;
 	private String firstName;
-	private String lastName;
+	private String lastNname;
 	private int age;
 	private String adress;
+	private String nationality;
+	private String login;
+	private String password;
+	
+	public Customer() {
+		super();
+	}
+	
+	public Customer(String firstName, String lastNname,
+			int age, String adress, String nationality, String login, String password) {
+		
+		super();
+		this.firstName = firstName;
+		this.lastNname = lastNname;
+		this.age = age;
+		this.adress = adress;
+		this.nationality = nationality;
+		this.login = login;
+		this.password = password;
+	}
+	
+	public Customer(Customer customer) {
+		
+		super();
+		this.firstName = customer.firstName;
+		this.lastNname = customer.lastNname;
+		this.age = customer.age;
+		this.adress = customer.adress;
+		this.nationality = customer.nationality;
+		this.login = customer.login;
+		this.password = customer.password;
+	}
+	
 }

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @XmlRootElement
 @EqualsAndHashCode
 public class Room {
-	private int id;
-	private String name;
+	private int roomId;
 	private int nbBeds;
+	private float price;
 }

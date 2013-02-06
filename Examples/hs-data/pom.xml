@@ -15,7 +15,7 @@
 		<relativePath>../hotelSystem/pom.xml</relativePath>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
-	
+
 	<!-- Properties that can be used throughout the POM as a substitution, and 
 		are used as filters in resources if enabled. The format is <name>value</name> -->
 	<properties>
@@ -43,6 +43,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>0.11.6</version>
+		</dependency>
+
+		<!-- MySQL database driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 	</dependencies>
 
