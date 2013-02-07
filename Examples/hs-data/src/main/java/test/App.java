@@ -1,5 +1,7 @@
 package test;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -12,13 +14,31 @@ public class App
     {
     	ApplicationContext context = 
     		new ClassPathXmlApplicationContext("Spring-Module.xml");
- 
         CustomerDao customerDao = (CustomerDao) context.getBean("customerDao");
-        Customer customer = new Customer("Mamadi", "Diakite", 23, "First Essai", "Française", "mdiakite", "admin");
+        
+    	System.out.println("\n\n==================== THE CUSTOMER INSERTION ====================\n\n");
+        Customer customer = new Customer("Mohamed Lamine", "Diakite", 23, "Second Essai", "Guinéenne", "mldiakite", "admin");
         customerDao.insert(customer);
- 
-        Customer customer1 = customerDao.findById(1);
+        
+        Customer customerToDelete = new Customer("Delete", "Diakite", 23, "Delete Essai", "Guinéenne", "ddiakite", "admin");
+        customerDao.insert(customerToDelete);
+        
+        System.out.println("\n\n==================== THE CUSTOMER SEARCH ====================\n\n");
+        Customer customer1 = customerDao.findById(5);
         System.out.println(customer1);
  
+        System.out.println("\n\n==================== THE CUSTOMER UPDATE ====================\n\n");
+        customer1.setAge(18);
+        customerDao.update(customer1);
+        
+        System.out.println("\n\n==================== THE CUSTOMER GET ALL ====================\n\n");
+        List<Customer> customers = customerDao.findAll();
+        for(int i=0; i<customers.size(); i++){
+        	System.out.println("\nCustomer Number " + i);
+        	System.out.println(customers.get(i));
+        }
+        
+        System.out.println("\n\n==================== THE CUSTOMER DELETE ====================\n\n");
+        customerDao.delete(customerToDelete);
     }
 }

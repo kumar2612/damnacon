@@ -1,11 +1,10 @@
-package com.damnacon.javaMavenSpringPgSMix.hs.data.dao;
+package com.damnacon.javaMavenSpringPgSMix.hs.data.service;
 
 import java.util.List;
 
 import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
 
-public interface CustomerDao {
-
+public interface CustomerService {
 	public int insert(Customer customer);
 	
 	public int update(Customer customer);
@@ -14,5 +13,5 @@ public interface CustomerDao {
 	
 	public Customer findById(int customerId);
 	
-	public List<Customer> findAll();
+	public List<Customer> getAll();
 }

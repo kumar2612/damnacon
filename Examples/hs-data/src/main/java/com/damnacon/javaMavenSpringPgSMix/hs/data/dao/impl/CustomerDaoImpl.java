@@ -16,7 +16,7 @@ public class CustomerDaoImpl extends JdbcDaoSupport  implements CustomerDao {
 		String sql = "insert into Customer (customer_id, first_name, last_name, age, " +
 				"adress, nationality, login, password) values(?, ?, ?, ?, ?, ?, ?, ?)";  
 		Object[] args = {customer.getCustomerId(), customer.getFirstName(), 
-				customer.getLastNname(), customer.getAge(), customer.getAdress(),
+				customer.getLastName(), customer.getAge(), customer.getAdress(),
 				customer.getNationality(), customer.getLogin(), customer.getPassword()}; 
 		
 		int status = this.getJdbcTemplate().update(sql, args);
@@ -26,11 +26,11 @@ public class CustomerDaoImpl extends JdbcDaoSupport  implements CustomerDao {
 
 	public int update(Customer customer) {
 		
-		String sql = "update Customer set customer_id = ?, first_name = ?, last_name = ?, " +
-				"age = ?, adress = ?, nationality = ?, login = ?, password = ?";  
-		Object[] args = {customer.getCustomerId(), customer.getFirstName(), 
-				customer.getLastNname(), customer.getAge(), customer.getAdress(),
-				customer.getNationality(), customer.getLogin(), customer.getPassword()}; 
+		String sql = "update Customer set first_name = ?, last_name = ?, " +
+				"age = ?, adress = ?, nationality = ?, login = ?, password = ?  where customer_id = ?";  
+		Object[] args = {customer.getFirstName(), customer.getLastName(), customer.getAge(), 
+				customer.getAdress(), customer.getNationality(), customer.getLogin(), 
+				customer.getPassword(), customer.getCustomerId()}; 
 		
 		int status = this.getJdbcTemplate().update(sql, args);  
 		
@@ -58,7 +58,7 @@ public class CustomerDaoImpl extends JdbcDaoSupport  implements CustomerDao {
 		return customer;
 	}
 	
-	public List<Customer> getAll() {
+	public List<Customer> findAll() {
 		
 		String sql = "select * from Customer";
 		 
