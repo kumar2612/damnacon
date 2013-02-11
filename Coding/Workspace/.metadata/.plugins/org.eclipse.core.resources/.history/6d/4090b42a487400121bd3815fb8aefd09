@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Project informations -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.damnacon.javaMavenSpringPgSMix</groupId>
+	<artifactId>hs-data</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>HOTEL SYSTEM DATA</name>
+	<url>http://localhost:8080/hotelSystem/</url>
+
+	<parent>
+		<artifactId>hotelSystem</artifactId>
+		<groupId>com.damnacon.javaMavenSpringPgSMix</groupId>
+		<relativePath>../hotelSystem/pom.xml</relativePath>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<!-- Properties that can be used throughout the POM as a substitution, and 
+		are used as filters in resources if enabled. The format is <name>value</name> -->
+	<properties>
+		<spring.version>3.1.2.RELEASE</spring.version>
+		<jackson.version>1.9.11</jackson.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- This element describes all of the dependencies associated with a project. 
+		These dependencies are used to construct a classpath for your project during 
+		the build process. They are automatically downloaded from the repositories 
+		defined in this project -->
+	<dependencies>
+		<!-- JUnit dependency for the unit tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Lombok is a framework used to reduces the boilerplate code. It generates 
+			some code for you like getters, setters, equals, hashCode, etc.. -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>0.11.6</version>
+		</dependency>
+
+		<!-- MySQL database driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+	</dependencies>
+
+	<!-- Information required to build the project -->
+	<build>
+		<finalName>hs-data</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<configuration>
+					<server>MyServer</server>
+					<path>/hs-data</path>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

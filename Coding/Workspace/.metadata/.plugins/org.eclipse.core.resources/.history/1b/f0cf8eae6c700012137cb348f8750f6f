@@ -1,0 +1,7 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao.impl;
+
+
+public class CustomerDaoImpl {
+
+
+}

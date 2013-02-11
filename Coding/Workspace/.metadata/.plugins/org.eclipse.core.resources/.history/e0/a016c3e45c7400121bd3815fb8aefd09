@@ -1,0 +1,24 @@
+# --------------------------------------------------------------------------
+# 	Parametres du composant Office
+#	Office component parameters
+# --------------------------------------------------------------------------
+
+# Adresse du Proxy
+# Proxy address
+
+#PROXY_HOST!proxy!
+PROXY_HOST!proxy-internet.localnet!
+
+# Numero de port du Proxy
+# Proxy port
+
+PROXY_PORT!3128!
+
+# chemin vers le fichier certificats
+# path to the certificate file
+
+F_CERTIFICATE!B:\vls\vls-bornes\vls-bornes-front\src\main\config\local\certif!
+
+# --------------------------------------------------------------------------
+# 	end of file
+# --------------------------------------------------------------------------

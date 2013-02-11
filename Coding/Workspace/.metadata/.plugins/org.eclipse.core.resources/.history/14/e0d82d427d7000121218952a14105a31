@@ -1,0 +1,22 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.model;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(of="id")	//Make the comparison on the id attribut only and not on all the attributs
+@XmlRootElement
+public class Customer {
+	
+	public static final Customer EMPTY = new Customer();
+	
+	private int customerId;
+	private String firstName;
+	private String lastNname;
+	private int age;
+	private String adress;
+	private String nationality;
+	private String login;
+	private String password;
+}

@@ -1,0 +1,7 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.model;
+
+import lombok.core.LombokApp;
+
+public class Room {
+	private String name;
+}

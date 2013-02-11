@@ -1,0 +1,40 @@
+package test;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.damnacon.javaMavenSpringPgSMix.hs.data.dao.CustomerDao;
+import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
+
+public class App
+{
+    public static void main( String[] args )
+    {
+    	ApplicationContext context = 
+    		new ClassPathXmlApplicationContext("Spring-Module.xml");
+        CustomerDao customerDao = (CustomerDao) context.getBean("customerDao");
+        
+    	/*
+    	System.out.println("\n\n==================== THE CUSTOMER INSERTION ====================\n\n");
+        Customer customer = new Customer("Mohamed Lamine", "Diakite", 23, "Second Essai", "Guinéenne", "mldiakite", "admin");
+        customerDao.insert(customer);
+        */
+        System.out.println("\n\n==================== THE CUSTOMER SEARCH ====================\n\n");
+        Customer customer1 = customerDao.findById(4);
+        customer1.setAge(18);
+ 
+        System.out.println("\n\n==================== THE CUSTOMER UPDATE ====================\n\n");
+        List<Customer> customers = customerDao.getAll();
+        for(int i=0; i<customers.size(); i++){
+        	System.out.println("Customer Number " + i);
+        	System.out.println(customers.get(i));
+        }
+        
+        System.out.println("\n\n==================== THE CUSTOMER GET ALL ====================\n\n");
+        
+        //System.out.println("\n\n==================== THE CUSTOMER DELETE ====================\n\n");
+        
+    }
+}

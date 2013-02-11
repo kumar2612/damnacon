@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- MySQL Datasource configuration to access the database -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/hotel_system" />
+		<property name="username" value="admin" />
+		<property name="password" value="admin" />
+	</bean>
+
+	<bean id="contactRepository" class="com.zenika.contact.repository.jdbc.JdbcContactRepository">
+		<constructor-arg ref="dataSourceTest" />
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceTest" />
+	</bean>
+
+
+</beans>

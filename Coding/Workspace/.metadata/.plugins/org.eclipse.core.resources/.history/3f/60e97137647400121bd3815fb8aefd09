@@ -1,0 +1,9 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao;
+
+import org.junit.runner.RunWith;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+public class CustomerDaoTest {
+
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- Définition de l'APPENDER CONSOLE -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{HH:mm:ss} %5p %c{1}:%L - %m%n" />
+		</layout>
+	</appender>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- 		LOGGER POUR LES TEST UNITAIRES				-->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<logger name="jUnit" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+		
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- 		LOGGER POUR LE PROJET VLS-BORNES-CORE  		-->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Definition des loggers pour le projet VLS-BORNES-CORE. -->
+	<logger name="net.awl.vls.bornes.core.dao" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="net.awl.vls.bornes.core.service" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="net.awl.vls.bornes.core.controller" additivity="false">
+		<level value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- Logger applicatif - Inscription d'un utilisateur -->
+	<logger name="Inscription" additivity="false">
+		<level value="info" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- LOGGER DES FRAMEWORKS (UNIQUEMENT EN CAS d'ERREUR) -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- Definition des loggers internes des frameworks     -->
+	<logger name="org.hibernate" additivity="false">
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="org.apache" additivity="false">
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="org.springframework" additivity="false">
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	<logger name="org.synyx.hades.dao" additivity="false">
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!--               LOGGER RACINE                        -->
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<root>
+		<level value="error" />
+		<appender-ref ref="CONSOLE" />
+	</root>
+</log4j:configuration>

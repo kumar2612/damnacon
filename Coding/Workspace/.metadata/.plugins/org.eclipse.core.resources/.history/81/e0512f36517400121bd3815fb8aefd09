@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<bornes_customer number_driving_licence="gn111Kad" account_id='1' person_id='1' phone_number="0654879635" 
+		email="elfaKAD@atosorigin.com" address="11 rue de la croisiere saint Kad"
+		date_obtaining_driving_licence="2011-02-02 22:22:22"/>
+	<bornes_customer number_driving_licence="gn222Sek" account_id='2' person_id='2' phone_number="0654879635" 
+		email="elfaKAD@atosorigin.com" address="11 rue de la croisiere saint Kad"
+		date_obtaining_driving_licence="2002-02-02 22:22:22"/>
+	<bornes_account id='1' login="elfaKad" password="elfaKad11" code_pin="1234" date_creation="2011-06-04 11:49:44" 
+															credit="222" type_account='PERSONAL' />
+	<bornes_account id='2' login="elfaSek" password="elfaSek22" code_pin="4321" date_creation="2011-06-04 11:51:44" 
+															credit="111" type_account='PROFESSIONAL' />
+	<bornes_person id='1' full_name="elfa KAD" phone_number="0654879635" email="elfaKAD@atosorigin.com" 
+						address="11 rue de la croisiere saint Kad"/>
+	<bornes_person id='2' full_name="elfa SEK" phone_number="0654879635" email="elfaSEK@atosorigin.com" 
+						address="22 rue de la croisiere saint Sek"/>
+</dataset>

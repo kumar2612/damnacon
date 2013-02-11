@@ -1,0 +1,26 @@
+package test;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.damnacon.javaMavenSpringPgSMix.hs.data.dao.CustomerDao;
+import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
+
+public class App
+{
+    public static void main( String[] args )
+    {
+    	ApplicationContext context = 
+    		new ClassPathXmlApplicationContext("Spring-Module.xml");
+    	
+    	System.out.println("\n\n==================== THE CUSTOMER INSERTION ====================\n\n");
+        CustomerDao customerDao = (CustomerDao) context.getBean("customerDao");
+        Customer customer = new Customer("Mohamed Lamine", "Diakite", 23, "Second Essai", "Guinéenne", "mldiakite", "admin");
+        customerDao.insert(customer);
+        
+        System.out.println("\n\n==================== THE CUSTOMER SEARCH ====================\n\n");
+        Customer customer1 = customerDao.findById(4);
+        System.out.println(customer1);
+ 
+    }
+}

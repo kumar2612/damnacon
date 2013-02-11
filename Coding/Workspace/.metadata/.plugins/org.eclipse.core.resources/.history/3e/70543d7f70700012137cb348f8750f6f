@@ -1,0 +1,20 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao;
+
+import java.util.List;
+
+import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
+
+public interface CustomerDao {
+
+	/**
+	 * Recherche d'un client ({@link Customer}) par son numero de permis
+	 * 
+	 * @param numberDrivingLicence le numero de permis du client
+	 * @return le client (ou null si aucune correspondance)
+	 */
+	public Customer findById(int id);
+	public List<Customer> getAll();
+	public void insert(Customer customer);
+	public int delete(Customer customer);
+	public int update(Customer customer);
+}

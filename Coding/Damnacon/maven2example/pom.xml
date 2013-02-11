@@ -1,0 +1,15 @@
+<project>
+     <name>Maven 2 Example</name>
+         <url>http://www.attainware.com/</url>
+     <modelVersion>4.0.0</modelVersion>
+   
+     <groupId>com.attainware.maven2example</groupId>
+        <version>1.0</version>
+     <artifactId>maven2example_package</artifactId>
+     <packaging>pom</packaging>
+   
+     <modules>
+       <module>maven2example_logic</module>
+       <module>maven2example_webapp</module>
+     </modules>
+ </project>

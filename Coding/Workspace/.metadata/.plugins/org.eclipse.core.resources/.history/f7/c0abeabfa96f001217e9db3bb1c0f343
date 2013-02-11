@@ -1,0 +1,8 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.model;
+
+
+
+@Data
+public class Room {
+
+}

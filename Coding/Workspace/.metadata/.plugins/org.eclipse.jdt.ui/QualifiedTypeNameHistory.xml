@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lombok.core.LombokApp"/>
+<fullyQualifiedTypeName name="lombok.Lombok"/>
+<fullyQualifiedTypeName name="lombok.Data"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.XmlRootElement"/>
+<fullyQualifiedTypeName name="lombok.EqualsAndHashCode"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.GregorianCalendar"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.support.JdbcDaoSupport"/>
+<fullyQualifiedTypeName name="com.damnacon.javaMavenSpringPgSMix.hs.data.dao.impl.CustomerDaoImpl"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.BeanPropertyRowMapper"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="com.damnacon.javaMavenSpringPgSMix.hs.data.dao.CustomerDao"/>
+<fullyQualifiedTypeName name="com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.sun.tracing.dtrace.NameAttributes"/>
+</qualifiedTypeNameHistroy>

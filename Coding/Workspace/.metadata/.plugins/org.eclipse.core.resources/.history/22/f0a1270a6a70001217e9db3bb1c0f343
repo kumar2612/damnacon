@@ -1,0 +1,236 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<!-- Project informations -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.damnacon.javaMavenSpringPgSMix</groupId>
+	<artifactId>hotelSystem</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>HOTEL SYSTEM PLATFORM</name>
+
+	<!-- The modules (sometimes called subprojects) to build as a part of this 
+		project. Each module listed is a relative path to the directory containing 
+		the module. -->
+	<modules>
+		<module>../hs-front</module>
+		<module>../hs-data</module>
+		<module>../hs-esb</module>
+		<module>../hs-admin</module>
+	</modules>
+
+	<!-- Properties that can be used throughout the POM as a substitution, and 
+		are used as filters in resources if enabled. The format is <name>value</name> -->
+	<properties>
+		<spring.version>3.1.2.RELEASE</spring.version>
+		<jackson.version>1.9.11</jackson.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!-- Specification for the SCM used by the project, such as CVS, Subversion, 
+		etc -->
+	<!-- scm> <connection>scm:hg:http://ganesh-code.mpht.priv.atos.fr/hg/vls/</connection> 
+		</scm -->
+
+	<!-- The lists of the remote repositories for discovering dependencies and 
+		extensions. -->
+	<!-- repositories> <repository> <id>central</id> <name>Release</name> <url>http://ganesh-code.mpht.priv.atos.fr/nexus/content/groups/release 
+		</url> <releases> <enabled>true</enabled> </releases> <snapshots> <enabled>false</enabled> 
+		</snapshots> </repository> <repository> <id>resthub</id> <url>http://resthub.org/nexus/content/groups/resthub</url> 
+		</repository> </repositories -->
+
+	<!-- Distribution information for a project that enables deployment of the 
+		site and artifacts to remote web servers and repositories respectively. -->
+	<!-- distributionManagement> <site> <id>site</id> <url>file://${url_site}/maven2/vls</url> 
+		</site> </distributionManagement -->
+
+	<!-- Information required to build the project -->
+	<build>
+		<finalName>hotelSystem</finalName>
+		<!-- Default plugin information to be made available for reference by projects 
+			derived from this one. This plugin configuration will not be resolved or 
+			bound to the lifecycle unless referenced. Any local configuration for a given 
+			plugin will override the plugin's entire definition here. -->
+		<pluginManagement>
+			<plugins>
+				<!-- In order to run easily your webapp -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+					<configuration>
+						<server>MyServer</server>
+						<path>/hotelSystem</path>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- Set default compilation to Java 1.7 and UTF-8 for encoding -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- It is recommanded to define resource encoding to avoid charset issues -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<!-- Maven eclipse plugin, aids to handle eclipse metada by using the 
+				command : "mvn eclipse:eclipse" This command has to be executed manually 
+				after each update of the dependencies -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<wtpmanifest>true</wtpmanifest>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<!-- Definition des repertoires "resources" utilises -->
+		<resources>
+			<resource>
+				<directory>src/main/config/filtered</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/config/${env}</directory>
+			</resource>
+		</resources>
+
+		<!-- Definition des repertoires "resources" utilises pour les tests -->
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<!-- Whether resources are filtered to replace tokens with parameterised 
+					values or not. The values are taken from the properties element and from 
+					the properties in the files listed in the filters element. DEFAULT = false -->
+				<filtering>false</filtering>
+			</testResource>
+		</testResources>
+
+	</build>
+
+	<!-- This element includes the specification of report plugins to use to 
+		generate the reports on the Maven-generated site. These reports will be run 
+		when a user executes mvn site. All of the reports will be included in the 
+		navigation bar for browsing. -->
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<charset>UTF-8</charset>
+					<docencoding>UTF-8</docencoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.16</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<!-- This element describes all of the dependencies associated with a project. 
+		These dependencies are used to construct a classpath for your project during 
+		the build process. They are automatically downloaded from the repositories 
+		defined in this project -->
+	<dependencies>
+		<!-- JUnit dependency for the unit tests -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- SPRING / DATA -->
+		<!-- Transaction Management Abstraction (depends on spring-core, spring-beans, 
+			spring-aop, spring-context) Define this if you use Spring Transactions or 
+			DAO Exception Hierarchy (org.springframework.transaction.*/org.springframework.dao.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, 
+			and iBatis. (depends on spring-core, spring-beans, spring-context, spring-tx) 
+			Define this if you need ORM (org.springframework.orm.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Aspect Oriented Programming (AOP) Framework (depends on spring-core, 
+			spring-beans) Define this if you use Spring AOP APIs (org.springframework.aop.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, 
+			spring-tx) Define this if you use Spring's JdbcTemplate API (org.springframework.jdbc.*) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- LOGGING -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<!-- JCL (Jakarta Commons-Logging). All the JCL logs are intercepted by 
+			SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<!-- Logback is an eval of LOG4J, it's totaly different of this one in 
+			terms of conception logback-classic natively implements the SLF4J API so 
+			that you can readily switch back and forth between logback and other logging 
+			frameworks such as log4j or java.util.logging (JUL). -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.0.9</version>
+		</dependency>
+	</dependencies>
+
+</project>

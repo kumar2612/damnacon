@@ -1,0 +1,722 @@
+2013-02-04 10:55:52,014 [Worker-1] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-04 10:55:52,518 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 10:56:07,871 [Worker-1] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-04 10:59:28,898 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 11:23:23,892 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 11:27:34,011 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 13:57:04,936 [Worker-3] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-04 13:57:05,007 [Worker-3] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 13:57:21,076 [Worker-3] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-04 13:58:27,522 [Worker-0] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 13:58:50,491 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 14:00:47,966 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:00:58,009 [New I/O client boss #2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/log4j/log4j/1.2.15/log4j-1.2.15.pom
+2013-02-04 14:00:58,038 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:08,046 [New I/O client boss #3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-core/3.0.5.RELEASE/spring-core-3.0.5.RELEASE.pom
+2013-02-04 14:01:08,078 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:18,089 [New I/O client boss #4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-expression/3.0.5.RELEASE/spring-expression-3.0.5.RELEASE.pom
+2013-02-04 14:01:18,103 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:28,112 [New I/O client boss #5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.pom
+2013-02-04 14:01:28,153 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:38,157 [New I/O client boss #6] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.0.5.RELEASE/spring-aop-3.0.5.RELEASE.pom
+2013-02-04 14:01:38,171 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:48,180 [New I/O client boss #7] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE.pom
+2013-02-04 14:01:48,194 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:01:58,215 [New I/O client boss #8] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-context-support/3.0.5.RELEASE/spring-context-support-3.0.5.RELEASE.pom
+2013-02-04 14:01:58,229 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:08,236 [New I/O client boss #9] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-tx/3.0.5.RELEASE/spring-tx-3.0.5.RELEASE.pom
+2013-02-04 14:02:08,262 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:18,273 [New I/O client boss #10] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/3.0.5.RELEASE/spring-jdbc-3.0.5.RELEASE.pom
+2013-02-04 14:02:18,287 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:28,295 [New I/O client boss #11] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-orm/3.0.5.RELEASE/spring-orm-3.0.5.RELEASE.pom
+2013-02-04 14:02:28,326 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:38,837 [New I/O client boss #12] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-oxm/3.0.5.RELEASE/spring-oxm-3.0.5.RELEASE.pom
+2013-02-04 14:02:38,873 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:48,877 [New I/O client boss #13] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE.pom
+2013-02-04 14:02:48,936 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:02:58,945 [New I/O client boss #14] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/3.0.5.RELEASE/spring-webmvc-3.0.5.RELEASE.pom
+2013-02-04 14:02:58,983 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:03:08,991 [New I/O client boss #15] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-webmvc-portlet/3.0.5.RELEASE/spring-webmvc-portlet-3.0.5.RELEASE.pom
+2013-02-04 14:03:09,008 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:03:19,017 [New I/O client boss #16] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-test/3.0.5.RELEASE/spring-test-3.0.5.RELEASE.pom
+2013-02-04 14:11:35,441 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 14:24:01,687 [Worker-23] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-04 14:24:11,753 [New I/O client boss #17] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring/2.5.5/spring-2.5.5.pom
+2013-02-04 14:26:10,392 [Worker-29] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-04 15:19:55,899 [Worker-59] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\shoppingcart\pom.xml: end tag name </configuration> must match start tag name <source> from line 16 (position: TEXT seen ...</target>\r\n\t\t\t\t</configuration>... @19:21)  @ line 19, column 21
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\shoppingcart\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\shoppingcart\pom.xml: end tag name </configuration> must match start tag name <source> from line 16 (position: TEXT seen ...</target>\r\n\t\t\t\t</configuration>... @19:21)  @ line 19, column 21
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\shoppingcart\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\shoppingcart\pom.xml: end tag name </configuration> must match start tag name <source> from line 16 (position: TEXT seen ...</target>\r\n\t\t\t\t</configuration>... @19:21)  @ line 19, column 21
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 10:42:46,796 [Worker-115] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-05 10:48:27,637 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-05 10:48:29,282 [Worker-3] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-05 10:48:29,972 [Worker-3] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 10:48:45,874 [Worker-3] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-05 10:50:00,565 [Worker-5] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-05 11:19:30,640 [Worker-13] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystemFront\pom.xml: in comment after two dashes (--) next character must be > not   (position: END_TAG seen ...<url>http://localhost:8080/hotelSystem/</url>\r\n\r\n\t<!-- \t<!-- ... @13:13)  @ line 13, column 13
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystemFront\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystemFront\pom.xml: in comment after two dashes (--) next character must be > not   (position: END_TAG seen ...<url>http://localhost:8080/hotelSystem/</url>\r\n\r\n\t<!-- \t<!-- ... @13:13)  @ line 13, column 13
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystemFront\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystemFront\pom.xml: in comment after two dashes (--) next character must be > not   (position: END_TAG seen ...<url>http://localhost:8080/hotelSystem/</url>\r\n\r\n\t<!-- \t<!-- ... @13:13)  @ line 13, column 13
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 11:35:28,178 [Worker-19] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 11:40:21,246 [Worker-13] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 11:40:32,527 [Worker-24] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.attainware.maven2example:maven2example_logic:jar:1.0-SNAPSHOT is missing, no dependency information available
+2013-02-05 11:51:54,074 [Worker-24] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 11:52:35,025 [Worker-29] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: unexpected character in markup < (position: END_TAG seen ...acts to remote web servers and repositories respectively. -->\r\n\t<<... @43:4)  @ line 43, column 4
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 14:08:03,148 [Worker-47] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 56 (position: TEXT seen ...</plugin>\r\n\t\t\t</plugins>... @66:14)  @ line 66, column 14
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 56 (position: TEXT seen ...</plugin>\r\n\t\t\t</plugins>... @66:14)  @ line 66, column 14
+ for project  at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model
+[FATAL] Non-parseable POM C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hotelSystem\pom.xml: end tag name </plugins> must match start tag name <plugin> from line 56 (position: TEXT seen ...</plugin>\r\n\t\t\t</plugins>... @66:14)  @ line 66, column 14
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readModel(DefaultModelBuilder.java:499) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:261) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 14:09:53,371 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:03,912 [New I/O client boss #2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-tx/3.1.2.RELEASE/spring-tx-3.1.2.RELEASE.pom
+2013-02-05 14:10:03,936 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:13,943 [New I/O client boss #3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-orm/3.1.2.RELEASE/spring-orm-3.1.2.RELEASE.pom
+2013-02-05 14:10:13,952 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:23,956 [New I/O client boss #4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-aop/3.1.2.RELEASE/spring-aop-3.1.2.RELEASE.pom
+2013-02-05 14:10:23,988 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:33,994 [New I/O client boss #5] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/springframework/spring-jdbc/3.1.2.RELEASE/spring-jdbc-3.1.2.RELEASE.pom
+2013-02-05 14:10:34,021 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:44,027 [New I/O client boss #6] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.7.2/slf4j-api-1.7.2.pom
+2013-02-05 14:10:44,069 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:10:54,088 [New I/O client boss #7] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.7.2/jcl-over-slf4j-1.7.2.pom
+2013-02-05 14:10:54,102 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:11:04,112 [New I/O client boss #8] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.0.9/logback-classic-1.0.9.pom
+2013-02-05 14:11:04,140 [Worker-50] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:11:14,162 [New I/O client boss #9] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.0.9/logback-core-1.0.9.pom
+2013-02-05 14:33:40,985 [Worker-0] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-05 14:33:41,036 [Worker-0] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 14:33:56,176 [Worker-0] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-05 15:11:27,971 [Worker-0] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-05 15:11:28,036 [Worker-0] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 15:11:43,376 [Worker-0] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-05 15:14:35,902 [Worker-4] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-05 15:14:35,997 [Worker-4] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 15:14:51,607 [Worker-4] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-05 15:24:06,108 [Worker-6] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-05 15:24:06,195 [Worker-6] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 15:24:21,475 [Worker-6] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-05 15:26:23,432 [Worker-5] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-05 15:26:33,512 [New I/O client boss #2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/projectlombok/lombok/0.11.6/lombok-0.11.6.pom
+2013-02-05 17:36:41,094 [Worker-69] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParentExternally(DefaultModelBuilder.java:841) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParent(DefaultModelBuilder.java:664) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:310) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 17:41:27,161 [Worker-73] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 6, column 10
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParentExternally(DefaultModelBuilder.java:841) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParent(DefaultModelBuilder.java:664) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:310) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 17:42:22,583 [Worker-71] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParentExternally(DefaultModelBuilder.java:841) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParent(DefaultModelBuilder.java:664) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:310) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-05 17:44:17,940 [Worker-71] ERROR o.e.m.c.i.p.r.ProjectRegistryManager - Failed to read Maven project: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+org.apache.maven.project.ProjectBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+ for project com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT at C:\Users\nddiakite\Projets_SEB\Projets\OFS\Coding\Examples\hs-data\pom.xml
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:149) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:102) ~[maven-core-3.0.4.jar:3.0.4]
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.readProject(MavenImpl.java:584) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.readProjectWithDependencies(ProjectRegistryManager.java:751) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.create(ProjectRegistryManager.java:168) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.project.registry.MavenProjectManager.create(MavenProjectManager.java:70) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.ui.internal.actions.SelectionUtil.getMavenProject(SelectionUtil.java:276) [org.eclipse.m2e.core.ui_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor.readMavenProject(MavenPomEditor.java:743) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.editor.pom.MavenPomEditor$6.run(MavenPomEditor.java:1064) [org.eclipse.m2e.editor_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was encountered while building the effective model for com.damnacon.javaMavenSpringPgSMix:hs-data:1.0-SNAPSHOT
+[FATAL] Non-resolvable parent POM: Could not find artifact com.damnacon.javaMavenSpringPgSMix:hotelSystem:pom:1.0-SNAPSHOT and 'parent.relativePath' points at wrong local POM @ line 12, column 10
+
+	at org.apache.maven.model.building.DefaultModelProblemCollector.newModelBuildingException(DefaultModelProblemCollector.java:195) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParentExternally(DefaultModelBuilder.java:841) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.readParent(DefaultModelBuilder.java:664) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:310) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.model.building.DefaultModelBuilder.build(DefaultModelBuilder.java:232) ~[maven-model-builder-3.0.4.jar:3.0.4]
+	at org.apache.maven.project.DefaultProjectBuilder.build(DefaultProjectBuilder.java:142) ~[maven-core-3.0.4.jar:3.0.4]
+	... 9 common frames omitted
+2013-02-06 14:43:07,568 [Worker-171] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-06 14:43:17,746 [New I/O client boss #3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/mysql/mysql-connector-java/5.1.9/mysql-connector-java-5.1.9.pom
+2013-02-06 15:32:57,866 [Worker-190] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-06 15:33:08,902 [New I/O client boss #4] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/mysql/mysql-connector-java/5.1.16/mysql-connector-java-5.1.16.pom
+2013-02-06 15:37:37,710 [Worker-2] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-06 15:37:38,320 [Worker-2] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-06 15:37:54,053 [Worker-2] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-06 17:06:35,523 [Worker-1] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-06 17:06:35,610 [Worker-1] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-06 17:06:50,770 [Worker-1] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-11 11:03:15,927 [Worker-4] INFO  o.e.m.c.i.i.nexus.NexusIndexManager - Updating index for repository: central|http://repo.maven.apache.org/maven2
+2013-02-11 11:03:16,228 [Worker-4] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-11 11:03:31,744 [Worker-4] ERROR o.e.m.c.i.i.nexus.NexusIndexManager - Unable to update index for central|http://repo.maven.apache.org/maven2
+java.io.IOException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.checkError(AsyncFetcher.java:251) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.AsyncFetcher$PipedErrorInputStream.read(AsyncFetcher.java:259) ~[org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at java.io.PipedInputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.io.InputStream.read(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties$LineReader.readLine(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load0(Unknown Source) ~[na:1.7.0_11]
+	at java.util.Properties.load(Unknown Source) ~[na:1.7.0_11]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:457) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:75) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:607) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:788) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.apache.maven.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:135) ~[indexer-core-3.1.0.jar:3.1.0]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1124) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager.updateIndex(NexusIndexManager.java:1081) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.NexusIndexManager$1.run(NexusIndexManager.java:658) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.m2e.core.internal.index.nexus.IndexUpdaterJob.run(IndexUpdaterJob.java:71) [org.eclipse.m2e.core_1.2.0.20120903-1050.jar:na]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53) [org.eclipse.core.jobs_3.5.300.v20120622-204750.jar:na]
+java.net.ConnectException: connection timed out to http://repo.maven.apache.org/maven2/.index/nexus-maven-repository-index.properties
+	at com.ning.http.client.providers.netty.NettyConnectListener.operationComplete(NettyConnectListener.java:95) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListener(DefaultChannelFuture.java:381) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.notifyListeners(DefaultChannelFuture.java:372) ~[na:na]
+	at org.jboss.netty.channel.DefaultChannelFuture.setFailure(DefaultChannelFuture.java:334) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:374) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108) ~[na:na]
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:44) ~[na:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:1.7.0_11]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:1.7.0_11]
+	at java.lang.Thread.run(Unknown Source) ~[na:1.7.0_11]
+Caused by: java.net.ConnectException: connection timed out
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processConnectTimeout(NioClientSocketPipelineSink.java:371) ~[na:na]
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:283) ~[na:na]
+	... 3 common frames omitted
+2013-02-11 13:40:07,809 [Worker-49] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-11 13:40:17,940 [New I/O client boss #2] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/com/h2database/h2/1.0.60/h2-1.0.60.pom
+2013-02-11 14:18:13,683 [Worker-75] INFO  c.n.h.c.p.n.NettyAsyncHttpProvider - Number of application's worked threads is 8
+2013-02-11 14:18:23,749 [New I/O client boss #3] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded http://repo.maven.apache.org/maven2/org/dbunit/dbunit/2.4.8/dbunit-2.4.8.pom
+2013-02-11 14:18:23,786 [Worker-75] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.springtestdbunit:spring-test-dbunit:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2013-02-11 14:20:24,423 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.springtestdbunit:spring-test-dbunit:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2013-02-11 14:20:34,557 [Worker-81] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.springtestdbunit:spring-test-dbunit:jar:0.0.1-SNAPSHOT is missing, no dependency information available
+2013-02-11 17:38:03,402 [Worker-155] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for com.github.springtestdbunit:spring-test-dbunit:jar:0.0.1-SNAPSHOT is missing, no dependency information available

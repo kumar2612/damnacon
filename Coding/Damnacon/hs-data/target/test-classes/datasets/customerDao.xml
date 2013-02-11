@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<customer firstName="Mamadi" lastNameName="Diakite" age='28' adress="RPS Lyon" 
+		nationality="0654879635" login="mdiakite" password="mdiakite"/>
+	<customer firstName="Mohamed Lamine" lastNameName="Diakite" age='88' adress="Conakry" 
+		nationality="0652279635" login="mldiakite" password="mldiakite"/>
+</dataset>

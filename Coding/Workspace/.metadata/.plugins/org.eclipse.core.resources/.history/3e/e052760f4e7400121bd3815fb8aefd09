@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbunit="http://www.resthub.org/schema/dbunit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.resthub.org/schema/dbunit 
+			http://www.resthub.org/schema/dbunit/resthub-dbunit-1.0.xsd">
+
+	<!-- Injection de la DataSource ds les DbUnit -->
+	<!-- Il est possible d'inclure ou d'exclure des tables afin d'éviter le clean de certaines données par exemple après un test -->
+	<dbunit:configuration data-source="dataSource" />
+
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe TerminalDaoTest -->
+	<bean id="datasetTerminalDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/terminalDao.xml" />
+	</bean>
+
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe AccountDaoTest -->
+	<bean id="datasetAccountDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/accountDao.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe CarDaoTest -->
+	<bean id="datasetCarDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/carDao.xml" />
+	</bean>
+	
+		<!-- Définition du dataset utilisé dans les tests unitaires de la classe CarPersonTest -->
+	<bean id="datasetPersonDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/personDao.xml" />
+	</bean>
+	
+		<!-- Définition du dataset utilisé dans les tests unitaires de la classe CustomerDaoTest -->
+	<bean id="datasetCustomerDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/customerDao.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe BreakdownDaoTest -->
+	<bean id="datasetBreakdownDao" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/breakdownDao.xml" />
+	</bean>
+	
+	
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe TerminalServiceTest -->
+	<bean id="datasetTerminalService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/terminalService.xml" />
+	</bean>
+
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe AccountServiceTest -->
+	<bean id="datasetAccountService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/accountService.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe CarServiceTest -->
+	<bean id="datasetCarService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/carService.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe PersonServiceTest -->
+	<bean id="datasetPersonService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/personService.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe CustomerServiceTest -->
+	<bean id="datasetCustomerService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/customerService.xml" />
+	</bean>
+	
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe BreakdownServiceTest -->
+	<bean id="datasetBreakdownService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer">
+		<property name="location" value="classpath:datasets/breakdownService.xml" />
+	</bean>
+</beans>

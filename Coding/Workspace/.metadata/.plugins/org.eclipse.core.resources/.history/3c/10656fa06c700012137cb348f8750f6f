@@ -1,0 +1,12 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao.impl;
+
+/**
+ * Recherche d'un client ({@link Customer}) par son numero de permis
+ * 
+ * @param numberDrivingLicence le numero de permis du client
+ * @return le client (ou null si aucune correspondance)
+ */
+public Customer getByNumberDrivingLicence(String numberDrivingLicence);
+public class CustomerDaoImpl {
+
+}

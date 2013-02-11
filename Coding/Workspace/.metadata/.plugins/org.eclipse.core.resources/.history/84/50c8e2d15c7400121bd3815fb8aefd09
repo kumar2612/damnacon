@@ -1,0 +1,209 @@
+package net.awl.vls.bornes.core.dao;
+
+import java.util.Random;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import junit.framework.Assert;
+import net.awl.vls.bornes.core.model.Account;
+import net.awl.vls.bornes.core.model.Customer;
+import net.awl.vls.bornes.core.model.Person;
+import net.awl.vls.bornes.core.model.Account.TypeAccount;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.resthub.core.test.dao.AbstractResourceDaoTest;
+import org.resthub.test.dbunit.DbUnitTestExecutionListener;
+import org.resthub.test.dbunit.annotation.DBOperation;
+import org.resthub.test.dbunit.annotation.InjectDataSet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import org.springframework.test.context.support.DirtiesContextTestExecutionListener;
+import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
+
+/**
+ * Classe de tests des fonctionnalités de la classe {@link CustomerDao}
+ * (basée sur RestHub AbstractResourceDaoTest<Customer, CustomerDao> qui teste de manière automatique
+ * les fonctionnalités de bases (save, delete, getById, findAll, ...)
+ * @author NDI
+ */
+//Toutes les annotations ci-dessous permettent de profiter de l'intégration de DBUnit ds Resthub
+@RunWith(SpringJUnit4ClassRunner.class)
+@TestExecutionListeners({DependencyInjectionTestExecutionListener.class,
+        DirtiesContextTestExecutionListener.class,        
+        DbUnitTestExecutionListener.class,
+        TransactionalTestExecutionListener.class})
+//On indique le context où sont définis les datasets
+@ContextConfiguration(locations = {"classpath:h2TestContext.xml"})
+public class CustomerDaoTest extends AbstractResourceDaoTest<Customer, CustomerDao> {
+
+	/**
+	 * Référence sur le logger dédié aux tests unitaires (version SL4J)
+	 */
+	private static final Logger junit = LoggerFactory.getLogger("jUnit");
+	
+	/**
+	 * Référence sur un des objets "Customer" qui sera utilisé dans les tests unitaires de CRUD de Resthub 
+	 */
+	private Customer customer;
+	
+	/**
+	 * Injection automatique de la classe DAO par Spring dans les classes de Tests de Resthub
+	 * 
+	 * @param customerDao la couche DAO à injecter et tester
+	 */
+    @Inject 			  //Indique que l'objet est injecté par SPRING 
+    @Named("customerDao") //L'injection se fait par Nom (ici le bean connu par Spring sous le nom "customerDao")
+    @Override
+	public void setResourceDao(CustomerDao customerDao) {
+		this.resourceDao = customerDao;
+	}
+
+    /**
+	 * Surchage de la fonction utilisée pour créer un objet "Customer" (@see {@link Customer} 
+	 * qui sera utilisé ds les tests unitaires de CRUD de Resthub
+	 */
+	@Override
+	protected Customer createTestRessource() throws Exception {
+
+		/* Création d'un compte respectant les contraintes	*/
+		StringBuilder login = new StringBuilder("ndd").append(new Random().nextInt(1000000));
+		StringBuilder password = new StringBuilder ("ndd").append(new Random().nextInt(10000));
+		StringBuilder codePin = new StringBuilder ("1").append(new Random().nextInt(999));
+		if(codePin.length() == 2){ codePin.append("22");}
+		else if(codePin.length() == 3){ codePin.append("2");}
+		else if(codePin.length() > 4){ codePin = new StringBuilder(codePin.substring(0, 4));}
+		StringBuilder dateCreation = new StringBuilder("2011-06-02 02:22:").append(new Random().nextInt(59));
+		long credit = new Long(new Random().nextInt(2000));
+		Account account = new Account(login.toString(), password.toString(), codePin.toString(), dateCreation.toString(), credit, TypeAccount.BOTH);
+		
+		/* Création d'une personne respectant les contraintes	*/
+		StringBuilder address = new StringBuilder("11 rue de la vilatiere").append(new Random().nextInt(2000));
+		Person person = new Person("Naby Daouda", "nnd@atosorigin.com", "0611248791", address.toString());
+		
+		/* Création du client	*/
+		StringBuilder numberDrivingLicence = new StringBuilder("nP").append(new Random().nextInt(10000000));
+
+		StringBuilder phoneNumber = new StringBuilder ("0441230271");
+		StringBuilder email = new StringBuilder ("ndd@atosorigin.com");
+
+		StringBuilder dateObtainingDrivingLicence = new StringBuilder("2011-06-02 02:22:").append(new Random().nextInt(59));
+		
+		customer = new Customer(numberDrivingLicence.toString(), email.toString(), account, 
+				phoneNumber.toString(), address.toString(), person, dateObtainingDrivingLicence.toString());
+		
+		return customer;
+	}
+	
+	/**
+	 * Surcharge de la fonction de test de l'UPDATE
+	 */
+	@Override
+	public void testUpdate() {
+		//On recherche la borne qui a été créée pour les tests unitaires
+		Customer tmp = this.resourceDao.readByPrimaryKey(this.customer.getId());
+		Assert.assertTrue("Il devrait exister un compte avec l'id(" + customer.getId() + ")", tmp != null);
+		junit.debug("Client recupere : {}", tmp.toString());
+		
+		//On met à jour les informations du compte afin de valider les UPDATES.
+		junit.debug("Client avant UPDATE : {}", tmp.toString());
+		
+		/* Création d'un compte respectant les contraintes	*/
+		StringBuilder login = new StringBuilder("Damnacon").append(new Random().nextInt(10000));
+		StringBuilder password = new StringBuilder ("ndd").append(new Random().nextInt(10000));
+		StringBuilder codePin = new StringBuilder ("1").append(new Random().nextInt(999));
+		if(codePin.length() == 2){ codePin.append("22");}
+		else if(codePin.length() == 3){ codePin.append("2");}
+		else if(codePin.length() > 4){ codePin = new StringBuilder(codePin.substring(0, 4));}
+		StringBuilder dateCreation = new StringBuilder("2011-06-02 02:22:").append(new Random().nextInt(59));
+		long credit = new Long(new Random().nextInt(2000));
+		Account account = new Account(login.toString(), password.toString(), codePin.toString(), dateCreation.toString(), credit, TypeAccount.BOTH);
+		
+		StringBuilder address = new StringBuilder("11 rue de la vilatiere").append(new Random().nextInt(2000));
+		Person person = new Person("NDD NEW", "nndNEW@atosorigin.com", "0611248791", address.toString());
+
+		tmp.setPerson(person);
+		tmp.setAccount(account);
+		
+		tmp.setPhoneNumber("0622157495");
+		tmp.setEmail("mailNEW@atosorigin.com");
+		tmp.setAddress("newADDRESS");
+		
+		tmp = this.resourceDao.save(tmp);
+		
+		//Assert.assertEquals("Le Client devrait avoir changé de personne", person, tmp.getPerson());
+		Assert.assertEquals("Le Client devrait avoir changé de numero de telephone", "0622157495", tmp.getPhoneNumber());
+		Assert.assertEquals("Le Client devrait avoir changé de mail", "mailNEW@atosorigin.com", tmp.getEmail());
+		Assert.assertEquals("Le Client devrait avoir changé d adresse", "newADDRESS", tmp.getAddress());
+		
+		junit.debug("Client apres UPDATE : {}", tmp.toString());
+	}
+	
+	
+	/**
+	 * Test de la fonctionnalité : getByNumberDrivingLicence
+	 */
+	@Test
+	//On indique que l'on veut injecter le jeux de données "datasetCustomerDao" et que l'on doit faire un CLEAN_INSERT
+	//A noter que l'opération "CLEAN_INSERT" est le mode par défaut (ici on le met juste pour l'exemple et montrer qu'il existe d'autre mode)
+	@InjectDataSet(value = "datasetCustomerDao", dbOperation = DBOperation.CLEAN_INSERT)
+	public void testGetByNumberDrivingLicence() {
+
+		//On recherche l'un des clients du dataset
+		Customer customer1 = this.resourceDao.getByNumberDrivingLicence("gn111Kad");
+		junit.debug("Client récupere avec son numero de permis : {}", customer1.toString());
+		Assert.assertTrue("Il devrait exister 1 et 1 seul client avec ce numero de permis)", customer1 != null);
+		
+		//On recherche un client qui n'existe pas
+		Customer customer2 = this.resourceDao.getByNumberDrivingLicence("inconnu");
+		Assert.assertTrue("Il ne devrait pas exister 1 client avec le numero de permis(inconnu)", customer2 == null);
+	}
+	
+	/**
+	 * Test de la fonctionnalité : getByLogin
+	 */
+	@Test
+	//On indique que l'on veut injecter le jeux de données "datasetCustomerDao" et que l'on doit faire un CLEAN_INSERT
+	//A noter que l'opération "CLEAN_INSERT" est le mode par défaut (ici on le met juste pour l'exemple et montrer qu'il existe d'autre mode)
+	@InjectDataSet(value = "datasetCustomerDao", dbOperation = DBOperation.CLEAN_INSERT)
+	public void testGetByLogin() {
+
+		//On recherche l'un des clients du dataset
+		Customer customer1 = this.resourceDao.getByLogin("elfaKad");
+		junit.debug("Client récupere avec son login : {}", customer1.toString());
+		Assert.assertTrue("Il devrait exister 1 et 1 seul client avec ce login)", customer1 != null);
+		
+		//On recherche un client qui n'existe pas
+		Customer customer2 = this.resourceDao.getByLogin("inconnu");
+		Assert.assertTrue("Il ne devrait pas exister 1 client portant le login(inconnu)", customer2 == null);
+	}
+	
+	/**
+	 * Test de la fonctionnalité : loginOrNumberDrivingLicenceAlreadyExist
+	 */
+	@Test
+	//On indique que l'on veut injecter le jeux de données "datasetCustomerDao" et que l'on doit faire un CLEAN_INSERT
+	//A noter que l'opération "CLEAN_INSERT" est le mode par défaut (ici on le met juste pour l'exemple et montrer qu'il existe d'autre mode)
+	@InjectDataSet(value = "datasetCustomerDao", dbOperation = DBOperation.CLEAN_INSERT)
+	public void testLoginOrNumberDrivingLicenceAlreadyExist() {
+		//On recherche l'une des voitures du dataset
+		
+		boolean thereIsMatching;
+		boolean thereIsNoMatching;
+		
+		thereIsMatching = this.resourceDao.loginOrNumberDrivingLicenceAlreadyExist("elfaKad", "gn111Kad");
+		
+		junit.debug("Client recupere avec Login existant : {}", thereIsMatching);
+		Assert.assertTrue("Il devrait exister 1 et 1 client ayant le login (elfaKad) et le numero de permis (gn111Kad)", thereIsMatching == true);
+		
+		//On recherche un client qui n'existe pas
+		thereIsNoMatching = this.resourceDao.loginOrNumberDrivingLicenceAlreadyExist("inconnu", "inconnu");
+		Assert.assertTrue("Il ne devrait pas exister 1 client portant le login(inconnu)", thereIsNoMatching == false);
+	}
+	
+}

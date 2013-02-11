@@ -1,0 +1,5 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.service;
+
+public class CustomerService2 {
+
+}

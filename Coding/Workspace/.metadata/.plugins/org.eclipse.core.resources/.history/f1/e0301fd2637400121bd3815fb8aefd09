@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dbunit="http://www.resthub.org/schema/dbunit"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Injection de la DataSource ds les DbUnit -->
+	<!-- Il est possible d'inclure ou d'exclure des tables afin d'éviter le 
+		clean de certaines données par exemple après un test -->
+	<!-- dbunit:configuration data-source="dataSource" / -->
+
+	<import resource="classpath:/contact-configuration.xml" />
+
+	<jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:/contact-create.sql" />
+	</jdbc:embedded-database>
+
+	<bean class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<!-- Définition du dataset utilisé dans les tests unitaires de la classe 
+		CustomerServiceTest -->
+	<!-- bean id="datasetCustomerService" class="org.resthub.test.dbunit.initializer.FlatXMLDatabaseInitializer"> 
+		<property name="location" value="classpath:datasets/customerService.xml" 
+		/> </bean -->
+
+
+</beans>

@@ -1,0 +1,35 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao.impl;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+
+import com.damnacon.javaMavenSpringPgSMix.hs.data.dao.CustomerDao;
+import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
+
+
+public class CustomerDaoImpl extends JdbcDaoSupport  implements CustomerDao {
+
+	public int insert(Customer customer) {
+		String sql = "insert into Person (id,name,age,place) values(?,?,?,?)";  
+		Object[] args = {person.getId(),person.getName(),person.getAge(),person.getPlace()};  
+		int status=this.getJdbcTemplate().update(sql, args);  
+		return status;
+	}
+	
+	public int update(Customer customer) {
+		
+	}
+	
+	public int delete(Customer customer) {
+		
+	}
+	
+	public Customer findById(int id) {
+		
+	}
+	
+	public List<Customer> getAll() {
+		
+	}
+}

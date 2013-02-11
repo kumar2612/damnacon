@@ -1,0 +1,8 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.model;
+
+import lombok.Data;
+
+@Data
+public class Room {
+
+}

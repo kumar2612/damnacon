@@ -1,0 +1,18 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.dao;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration({ "applicationContext-test.xml", "applicationContext-test-h2.xml" })
+@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class, DataSetTestExecutionListener.class })
+@DataSet(dbType = DBType.H2)
+public class CustomerDaoTest {
+
+}

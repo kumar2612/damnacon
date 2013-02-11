@@ -1,0 +1,54 @@
+package com.damnacon.javaMavenSpringPgSMix.hs.data.service.impl;
+
+import java.util.List;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+
+import com.damnacon.javaMavenSpringPgSMix.hs.data.model.Customer;
+
+public class CustomerServiceImpl {
+
+    @Inject 			  //Indique que l'objet est injecté par SPRING 
+    @Named("customerDao") //l'injection se fait par Nom (ici le bean connu par Spring sous le nom "CustomerDao")
+    @Override
+    public void setDao(CustomerDao customerDao) {
+        this.dao = customerDao;
+    }
+    
+	public int insert(Customer customer) {
+		
+		int status = this.getJdbcTemplate().update(sql, args);
+		
+		return status;
+	}
+
+	public int update(Customer customer) {
+		
+		int status = this.getJdbcTemplate().update(sql, args);  
+		
+		return status; 
+	}
+	
+	public int delete(Customer customer) {
+		
+		int status = this.getJdbcTemplate().update(sql, args);
+		
+		return status; 
+	}
+	
+	public Customer findById(int customerId) {
+		
+		Customer customer = (Customer)getJdbcTemplate().queryForObject(sql, args, 
+				new BeanPropertyRowMapper(Customer.class));
+	 
+		return customer;
+	}
+	
+	public List<Customer> getAll() {
+		
+		List<Customer> customers  = getJdbcTemplate().query(sql,
+				new BeanPropertyRowMapper(Customer.class));
+	 
+		return customers;
+	}
+}
